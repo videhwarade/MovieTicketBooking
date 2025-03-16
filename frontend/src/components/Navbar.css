@@ -54,3 +54,32 @@
   display: flex;
   gap: 15px;
 }
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar input {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.search-bar button {
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}

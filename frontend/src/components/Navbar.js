@@ -59,6 +59,18 @@ const Navbar = ({ user, onSignOut }) => {
         <Link to="/">MovieBooking</Link>
       </div>
 
+      {/* Center links */}
+      <div className="nav-links">
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+      </div>
+
+      {/* Search bar */}
+      <div className="search-bar">
+        <input type="text" placeholder="Search movies..." />
+        <button type="submit">Search</button>
+      </div>
+
       {/* Right side user profile and dropdown */}
       <div className="user-profile" ref={dropdownRef}>
         {user ? (

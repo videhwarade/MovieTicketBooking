@@ -9,6 +9,10 @@ import TicketBooking from './components/TicketBooking';
 import UserProfileEdit from './components/UserProfileEdit';
 import api from './api';
 import UserProfileShowTickets from './components/UserProfileShowTickets';
+import About from './components/About';
+import Contact from './components/Contact'; // Import Contact
+import Footer from './components/Footer'; // Import Footer
+import './App.css'; // Import App.css for additional styling
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -38,16 +42,23 @@ const App = () => {
 
   return (
     <Router>
-      <Navbar user={user} onSignOut={handleSignOut} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/book/:movieId" element={<TicketBooking />} />
-        <Route path="/show-tickets" element={<UserProfileShowTickets />} />
-        <Route path="/profile" element={<UserProfileEdit />} /> {/* Add this line */}
-        <Route path="/admin" element={<Admin />} />
-      </Routes>
+      <div className="app-container">
+        <Navbar user={user} onSignOut={handleSignOut} />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/book/:movieId" element={<TicketBooking />} />
+            <Route path="/show-tickets" element={<UserProfileShowTickets />} />
+            <Route path="/profile" element={<UserProfileEdit />} /> {/* Add this line */}
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} /> {/* Add this line */}
+          </Routes>
+        </div>
+        <Footer /> {/* Add Footer */}
+      </div>
     </Router>
   );
 };

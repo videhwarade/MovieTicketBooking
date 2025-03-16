@@ -29,26 +29,31 @@ const UserProfileShowTickets = () => {
     <div className="user-profile-container">
       <h2 className="user-profile-header">Your Bookings</h2>
       <div className="booking-grid">
-        {bookings.map((booking) => (
-          <div
-            key={booking._id}
-            className="booking-card"
-            onClick={() => openModal(booking)}
-          >
-            <div className="booking-card-content">
-              {/* Movie Poster */}
-              <img
-                src={booking.movie.poster}
-                alt={booking.movie.title}
-                className="movie-poster"
-              />
-              <div className="card-text">
-                <h3 className="movie-title">{booking.movie.title}</h3>
-                <p className="seat-count">Seats: {booking.seatCount}</p>
+        {bookings.map((booking) => {
+          if (!booking || !booking.movie) {
+            return null;
+          }
+          return (
+            <div
+              key={booking._id}
+              className="booking-card"
+              onClick={() => openModal(booking)}
+            >
+              <div className="booking-card-content">
+                {/* Movie Poster */}
+                <img
+                  src={booking.movie.poster}
+                  alt={booking.movie.title}
+                  className="movie-poster"
+                />
+                <div className="card-text">
+                  <h3 className="movie-title">{booking.movie.title}</h3>
+                  <p className="seat-count">Seats: {booking.seatCount}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Modal for Seat Details */}
