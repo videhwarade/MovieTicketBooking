@@ -1,0 +1,218 @@
+/* Container for the entire profile page */
+.user-profile-container {
+  font-family: 'Arial', sans-serif;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+.user-profile-header {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Profile form */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Input fields and buttons */
+input[type="text"],
+input[type="email"],
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Avatar preview */
+.avatar-preview {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Booking list and cards */
+.booking-list,
+.booking-grid {
+  padding: 0;
+  list-style-type: none;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.booking-item,
+.booking-card {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.booking-item div,
+.booking-card-content {
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.booking-item strong,
+.booking-card .movie-title {
+  font-weight: bold;
+  color: #333;
+}
+
+.booking-card:hover,
+.booking-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Movie poster and card text */
+.movie-poster,
+.modal-image {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-text {
+  margin-top: 15px;
+}
+
+.movie-title {
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.seat-count {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 600px;
+  padding: 30px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  animation: slideUp 0.5s ease-out;
+}
+
+.modal-header {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.modal-content,
+.modal-title,
+.modal-text {
+  margin-bottom: 20px;
+}
+
+.modal-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.modal-text {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.close-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.close-button:hover {
+  background-color: #0056b3;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

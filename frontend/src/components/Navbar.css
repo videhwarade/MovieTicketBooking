@@ -1,0 +1,56 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar .user-profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .user-name {
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.navbar .dropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: white;
+  color: black;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.navbar .dropdown-item {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.navbar .dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+.navbar .auth-links {
+  display: flex;
+  gap: 15px;
+}
