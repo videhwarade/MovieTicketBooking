@@ -54,63 +54,63 @@ const Navbar = ({ user, onSignOut }) => {
 
   return (
     <nav className="navbar">
-      {/* Left side logo */}
-      <div className="logo">
-        <Link to="/">MovieBooking</Link>
+      {/* Left side logo and links */}
+      <div className="left-section">
+        <div className="logo">
+          <Link to="/">MovieBooking</Link>
+        </div>
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+        </div>
       </div>
 
-      {/* Center links */}
-      <div className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-      </div>
-
-      {/* Search bar */}
-      <div className="search-bar">
-        <input type="text" placeholder="Search movies..." />
-        <button type="submit">Search</button>
-      </div>
-
-      {/* Right side user profile and dropdown */}
-      <div className="user-profile" ref={dropdownRef}>
-        {user ? (
-          <>
-            <span className="user-name" onClick={toggleDropdown}>
-              {userName}
-            </span>
-            {isDropdownOpen && (
-              <div className="dropdown">
-                <Link
-                  to="/profile"
-                  className="dropdown-item"
-                  onClick={handleItemClick}
-                >
-                  Edit Profile
-                </Link>
-                <Link
-                  to="/show-tickets"
-                  className="dropdown-item"
-                  onClick={handleItemClick}
-                >
-                  Show Tickets
-                </Link>
-                <button
-                  className="dropdown-item"
-                  onClick={() => {
-                    handleItemClick();
-                    onSignOut();
-                  }}
-                >
-                  Sign Out
-                </button>
-              </div>
-            )}
-          </>
-        ) : (
-          <div className="auth-links">
-            <Link to="/signin">Sign In</Link>
-          </div>
-        )}
+      {/* Right side search bar and user profile */}
+      <div className="right-section">
+        <div className="search-bar">
+          <input type="text" placeholder="Search movies..." />
+          <button type="submit">Search</button>
+        </div>
+        <div className="user-profile" ref={dropdownRef}>
+          {user ? (
+            <>
+              <span className="user-name" onClick={toggleDropdown}>
+                {userName}
+              </span>
+              {isDropdownOpen && (
+                <div className="dropdown">
+                  <Link
+                    to="/profile"
+                    className="dropdown-item"
+                    onClick={handleItemClick}
+                  >
+                    Edit Profile
+                  </Link>
+                  <Link
+                    to="/show-tickets"
+                    className="dropdown-item"
+                    onClick={handleItemClick}
+                  >
+                    Show Tickets
+                  </Link>
+                  <button
+                    className="dropdown-item"
+                    onClick={() => {
+                      handleItemClick();
+                      onSignOut();
+                    }}
+                  >
+                    Sign Out
+                  </button>
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="auth-links">
+              <Link to="/signin">Sign In</Link>
+            </div>
+          )}
+        </div>
       </div>
     </nav>
   );

@@ -4,7 +4,19 @@
   align-items: center;
   padding: 10px 20px;
   background-color: #333;
-  color: white;
+  color: #fff;
+}
+
+.left-section, .right-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+  margin-right: 20px;
 }
 
 .navbar .logo {
@@ -62,8 +74,9 @@
 }
 
 .nav-links a {
-  text-decoration: none;
   color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
   font-size: 16px;
 }
 
@@ -75,6 +88,7 @@
 
 .search-bar input {
   padding: 5px;
+  margin-right: 5px;
   font-size: 16px;
 }
 
@@ -82,4 +96,39 @@
   padding: 5px 10px;
   font-size: 16px;
   cursor: pointer;
+}
+
+.user-profile {
+  position: relative;
+}
+
+.user-name {
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.auth-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
 }
