@@ -198,6 +198,21 @@ button:hover {
   background-color: #0056b3;
 }
 
+.cancel-button {
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-bottom: 10px; /* Add margin to separate from the close button */
+}
+
+.cancel-button:hover {
+  background-color: #c0392b;
+}
+
 /* Animations */
 @keyframes fadeIn {
   0% {

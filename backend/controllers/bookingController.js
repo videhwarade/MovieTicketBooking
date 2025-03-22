@@ -25,6 +25,7 @@ const getUserBookings = async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 };
+
 const getReservedSeats = async (req, res) => {
   const { movieId } = req.params;
 
@@ -43,4 +44,18 @@ const getReservedSeats = async (req, res) => {
   }
 };
 
-module.exports = { bookTicket, getUserBookings, getReservedSeats };
+// Add the cancelBooking function
+const cancelBooking = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const booking = await Booking.findByIdAndDelete(id);
+    if (!booking) return res.status(404).json({ message: 'Booking not found' });
+
+    res.status(200).json({ message: 'Booking cancelled successfully' });
+  } catch (err) {
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+module.exports = { bookTicket, getUserBookings, getReservedSeats, cancelBooking };

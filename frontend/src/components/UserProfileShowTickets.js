@@ -23,7 +23,29 @@ const UserProfileShowTickets = () => {
   const closeModal = () => setSelectedBooking(null);
 
   // Open the modal with booking details
-  const openModal = (booking) => setSelectedBooking(booking);
+  const openModal = (booking) => {
+    setSelectedBooking(booking);
+  };
+
+  // Handle ticket cancellation
+  const handleCancelBooking = async () => {
+    const confirmCancel = window.confirm('Are you sure you want to cancel this booking?');
+    if (!confirmCancel) return;
+
+    try {
+      await api.delete(`/bookings/cancel/${selectedBooking._id}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+      });
+      closeModal(); // Close the modal
+      window.location.reload(); // Refresh the page
+    } catch (err) {
+      if (err.response && err.response.status === 404) {
+        console.error('Booking not found', err);
+      } else {
+        console.error('Failed to cancel booking', err);
+      }
+    }
+  };
 
   return (
     <div className="user-profile-container">
@@ -79,6 +101,12 @@ const UserProfileShowTickets = () => {
                   : 'No seat details available'}
               </p>
             </div>
+            <button
+              onClick={handleCancelBooking}
+              className="cancel-button"
+            >
+              Cancel Booking
+            </button>
             <button onClick={closeModal} className="close-button">
               Close
             </button>
